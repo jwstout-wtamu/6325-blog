@@ -25,8 +25,8 @@ SECRET_KEY = "django-insecure-jqcr__56h-2^&d9rzxa)*a7-qpxyg)ic!8mn*#%1!#+eltezo%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
-#ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -119,7 +119,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = "/static/"
+STATIC_URL = "static/"
 #STATICFILES_DIRS = [BASE_DIR / "static"]  # new
 STATICFILE_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles" #new
@@ -133,3 +133,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = "home"  # new
 LOGOUT_REDIRECT_URL = "home"  # new
+
