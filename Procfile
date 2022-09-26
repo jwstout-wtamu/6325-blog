@@ -1,1 +1,1 @@
-web: gunicorn --chdir pages django_project.wsgi
+web: gunicorn django_project.wsgi --log-file -
