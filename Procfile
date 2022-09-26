@@ -1,0 +1,1 @@
+web: gunicorn --chdir pages django_project.wsgi

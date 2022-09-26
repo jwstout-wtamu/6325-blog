@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-jqcr__56h-2^&d9rzxa)*a7-qpxyg)ic!8mn*#%1!#+eltezo%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # new
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -120,7 +121,8 @@ USE_TZ = True
 STATIC_URL = "/static/"
 #STATICFILES_DIRS = [BASE_DIR / "static"]  # new
 STATICFILE_DIRS = [BASE_DIR / "static"]
-
+STATIC_ROOT = BASE_DIR / "staticfiles" #new
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"  # new
 
 
 # Default primary key field type
