@@ -2,34 +2,33 @@
 <html>
   <head>
     <title>FSHD blog</title>
-    <link href="https://fonts.googleapis.com/css?family=\
-    Source+Sans+Pro:400" rel="stylesheet">
-    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400"
+      rel="stylesheet">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet"s>
   </head>
   <body>
     <div>
       <header>
-        <div class="nav-right">
-          <h1><a href="{% url 'home' %}">FSHD blog</a></h1>
+        <div class="nav-left">
+          <img src= "img/FSHD-Header-Logo.jpeg" alt="FSHD Society" />
+          <h1><a href="{% url 'home' %}">FSHD blog</a></h1><br></br>
         </div>
         <div class="nav-right">
           <a href="{% url 'post_new' %}">+ New Blog Post</a>
         </div>
       </header>
-      {% block content %}
-      {% endblock content %}
+      {% if user.is_authenticated %}
+        <p>Hi {{ user.username }}!</p>
+        <p><a href="{% url 'logout' %}">Log out</a></p>
+      {% else %}
+        <p>You are not logged in.</p>
+        <a href="{% url 'login' %}">Log In</a> |
+        <a href="{% url 'signup' %}">Sign Up</a>
+      {% endif %}
+    {% block content %}
+    {% endblock content %}
     </div>
   </body>
-</html>
-<html>
-<style>
-h3 {
-  text-align: center;
-}
-h4 {
-  text-align: center;
-}
-</style>
 </html>
 <div class="content">
   <h3 class="p"> <font size="+4">Facioscapulohumeral Muscular Dystrophy (FSHD)</a></h3></div></font>
